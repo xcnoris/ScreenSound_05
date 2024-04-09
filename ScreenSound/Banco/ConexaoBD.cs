@@ -16,28 +16,7 @@ internal class ConexaoBD
     {
         return new SqlConnection(stringDeConexao);
     }
-    public IEnumerable<Artista> Listar()
-    {
-        var lista = new List<Artista>();
-        using var connection = ObeterConexao();
-        connection.Open();
-
-        string comando = "select * from Artistas";
-        SqlCommand consulta = new SqlCommand(comando, connection);
-        using SqlDataReader dataReader = consulta.ExecuteReader();
-
-        while (dataReader.Read())
-        {
-            string nomeArtista = Convert.ToString(dataReader["Nome"]);
-            string bioArtista = Convert.ToString(dataReader["Bio"]);
-            int idArtista = Convert.ToInt32(dataReader["Id"]);
-            Artista artista = new(nomeArtista, bioArtista) { Id = idArtista };
-
-            lista.Add(artista);
-        }
-        return lista;
-
-    }
+    
 
 
 }

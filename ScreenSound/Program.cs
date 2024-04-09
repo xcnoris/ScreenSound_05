@@ -6,8 +6,10 @@ using ScreenSound.Modelos;
 
 try
 {
-    var connection = new ConexaoBD();
-    var listaArtistas = connection.Listar();
+    var artistaDAL = new ArtistaDal();
+    artistaDAL.Adcionar(new Artista("Maricotinha", "MIL grau"));
+
+    var listaArtistas = artistaDAL.Listar();
 
     foreach (var artista in listaArtistas)
     {
