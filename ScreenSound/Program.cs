@@ -6,9 +6,13 @@ using ScreenSound.Modelos;
 
 try
 {
-    using var conection = new ConexaoBD().ObeterConexao();
-    conection.Open();
-    Console.WriteLine(conection.State);
+    var connection = new ConexaoBD();
+    var listaArtistas = connection.Listar();
+
+    foreach (var artista in listaArtistas)
+    {
+        Console.WriteLine(artista);
+    }
 
 }
 catch (Exception ex)
