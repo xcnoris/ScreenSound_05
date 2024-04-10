@@ -7,7 +7,7 @@ using ScreenSound.Modelos;
 try
 {
     var artistaDAL = new ArtistaDal();
-    artistaDAL.Adcionar(new Artista("Maricotinha", "MIL grau"));
+    
 
     var listaArtistas = artistaDAL.Listar();
 
