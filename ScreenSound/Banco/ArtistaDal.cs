@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 using ScreenSound.Modelos;
 using System;
 using System.Collections.Generic;
@@ -42,5 +43,11 @@ internal class ArtistaDal
     {
         context.Artistas.Remove(artista);
         context.SaveChanges();
+    }
+
+    public Artista? RecuparPeloNome(string valorBusca)
+    {
+
+        return context.Artistas.FirstOrDefault(a => a.Nome.Equals(valorBusca));
     }
 }

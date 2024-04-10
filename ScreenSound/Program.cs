@@ -10,16 +10,27 @@ try
     var artistaDAL = new ArtistaDal(context);
 
     //var novoArtista = new Artista("Menino Maluquinho", "Mil Grau");
-    var novoArtista = new Artista("Jamily", "Mil Grauuuuu") { Id= 2002};
+    var novoArtista = new Artista("Jamily", "Mil Grauuuuu") { Id= 1003};
+    //artistaDAL.Deletar(novoArtista);
 
     //artistaDAL.Adcionar(novoArtista);
-    artistaDAL.Atualizar(novoArtista);
+    //artistaDAL.Atualizar(novoArtista);
     var listaArtistas = artistaDAL.Listar();
 
-    foreach (var artista in listaArtistas)
+    var teste = artistaDAL.RecuparPeloNome( "teste");
+    if( teste != null)
     {
-        Console.WriteLine(artista);
+        Console.WriteLine(teste);
+
+    } 
+    else
+    {
+        Console.WriteLine("Não foi achado nenhum artista no banco com esse nome");
     }
+    //foreach (var artista in teste)
+    //{
+    //    Console.WriteLine(artista);
+    //}
 
 }
 catch (Exception ex)
