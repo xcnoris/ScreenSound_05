@@ -4,49 +4,45 @@ using ScreenSound.Modelos;
 
 
 
-try
-{
-    var context = new ScreenSoundContext();
-    var artistaDAL = new ArtistaDal(context);
+//try
+//{
+//    var context = new ScreenSoundContext();
+//    var artistaDAL = new ArtistaDal(context);
 
-    //var novoArtista = new Artista("Menino Maluquinho", "Mil Grau");
-    var novoArtista = new Artista("Jamily", "Mil Grauuuuu") { Id= 1003};
-    //artistaDAL.Deletar(novoArtista);
+//    //var novoArtista = new Artista("Menino Maluquinho", "Mil Grau");
+//    var novoArtista = new Artista("Jamily", "Mil Grauuuuu") { Id= 1003};
+//    //artistaDAL.Deletar(novoArtista);
 
-    //artistaDAL.Adcionar(novoArtista);
-    //artistaDAL.Atualizar(novoArtista);
-    var listaArtistas = artistaDAL.Listar();
+//    //artistaDAL.Adcionar(novoArtista);
+//    //artistaDAL.Atualizar(novoArtista);
+//    var listaArtistas = artistaDAL.Listar();
 
-    var teste = artistaDAL.RecuparPeloNome( "teste");
-    if( teste != null)
-    {
-        Console.WriteLine(teste);
+//    var teste = artistaDAL.RecuparPeloNome( "teste");
+//    if( teste != null)
+//    {
+//        Console.WriteLine(teste);
 
-    } 
-    else
-    {
-        Console.WriteLine("Não foi achado nenhum artista no banco com esse nome");
-    }
-    //foreach (var artista in teste)
-    //{
-    //    Console.WriteLine(artista);
-    //}
+//    } 
+//    else
+//    {
+//        Console.WriteLine("Não foi achado nenhum artista no banco com esse nome");
+//    }
+//    //foreach (var artista in teste)
+//    //{
+//    //    Console.WriteLine(artista);
+//    //}
 
-}
-catch (Exception ex)
-{
+//}
+//catch (Exception ex)
+//{
 
-    Console.WriteLine($"Ocorreu um [ERRO]: {ex.Message}");
-}
-return;
+//    Console.WriteLine($"Ocorreu um [ERRO]: {ex.Message}");
+//}
+//return;
+var context = new ScreenSoundContext();
+var artistaDAL = new ArtistaDal(context);
 
 
-Artista ira = new Artista("Ira!", "Banda Ira!");
-Artista beatles = new("The Beatles", "Banda The Beatles");
-
-Dictionary<string, Artista> artistasRegistrados = new();
-artistasRegistrados.Add(ira.Nome, ira);
-artistasRegistrados.Add(beatles.Nome, beatles);
 
 Dictionary<int, Menu> opcoes = new();
 opcoes.Add(1, new MenuRegistrarArtista());
@@ -85,7 +81,7 @@ void ExibirOpcoesDoMenu()
     if (opcoes.ContainsKey(opcaoEscolhidaNumerica))
     {
         Menu menuASerExibido = opcoes[opcaoEscolhidaNumerica];
-        menuASerExibido.Executar(artistasRegistrados);
+        menuASerExibido.Executar(artistaDAL);
         if (opcaoEscolhidaNumerica > 0) ExibirOpcoesDoMenu();
     } 
     else
