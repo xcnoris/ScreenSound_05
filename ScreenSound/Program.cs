@@ -6,9 +6,14 @@ using ScreenSound.Modelos;
 
 try
 {
-    var artistaDAL = new ArtistaDal();
-    
+    var context = new ScreenSoundContext();
+    var artistaDAL = new ArtistaDal(context);
 
+    //var novoArtista = new Artista("Menino Maluquinho", "Mil Grau");
+    var novoArtista = new Artista("Jamily", "Mil Grauuuuu") { Id= 2002};
+
+    //artistaDAL.Adcionar(novoArtista);
+    artistaDAL.Atualizar(novoArtista);
     var listaArtistas = artistaDAL.Listar();
 
     foreach (var artista in listaArtistas)
