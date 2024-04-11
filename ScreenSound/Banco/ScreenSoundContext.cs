@@ -11,14 +11,18 @@ namespace ScreenSound.Banco;
 
 internal class ScreenSoundContext : DbContext
 {
+    //Os objetos DbSet são usados para trabalhar com os conjuntos de entidades, nesse caso, entidades do tipo Receita.
+
     // Referenciando a class Artista
     public DbSet<Artista> Artistas { get; set; }
-    
-    
+
+    // Referenciando a class Musica
+    public DbSet<Musica> Musica { get; set; }
+
     //Conexao com o banco de dados
     private string stringDeConexao = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScreenSound;Integrated Security=True;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
-    // Metodo de conexao com banco do Entity Framework
+    // Metodo de conexao do Entity Framework com banco 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(stringDeConexao);

@@ -13,6 +13,7 @@ internal class ArtistaDal
 {
     private readonly ScreenSoundContext context;
 
+    // Criando um construtor para o context
     public ArtistaDal(ScreenSoundContext context)
     {
         this.context = context;
