@@ -6,14 +6,47 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ScreenSound.Banco;
-
-internal abstract class DAL<T>
+// Usamos o where para dizer que o T vai representar uma class
+internal abstract class DAL<T> where T : class
 {
-    public abstract IEnumerable<T> Listar();
-    public abstract void Adicionar(T objeto);
-    public abstract void Atualizar(T objeto);
-    public abstract void Deletar(T objeto);
-    //public T? RecuparPeloNome(T valor);
+    protected readonly ScreenSoundContext context;
+
+    // Contrutor solicitando context
+    protected DAL(ScreenSoundContext context)
+    {
+        this.context = context;
+    }
+
+
+    // Metodo listar musicas
+    public IEnumerable<T> Listar()
+    {
+        // Usamos o generic Set para pegar o tpo da class  que estamos ultiliazando ao chamar o metodo
+        return context.Set<T>().ToList();
+    }
+
+    // Metodo Adiconar Musica
+    public void Adicionar(T objeto)
+    {
+        context.Set<T>().Add(objeto);
+        context.SaveChanges();
+    }
+
+    //Metodo atualizar musicas
+    public void Atualizar(T objeto)
+    {
+        context.Set<T>().Update(objeto);
+        context.SaveChanges();
+    }
+
+    // Metodo Deletar musica
+    public void Deletar(T objeto)
+    {
+        context.Set<T>().Remove(objeto);
+        context.SaveChanges();
+    }
+
+
 
 
 

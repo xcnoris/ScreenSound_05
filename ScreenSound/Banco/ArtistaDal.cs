@@ -11,41 +11,11 @@ namespace ScreenSound.Banco;
 
 internal class ArtistaDal : DAL<Artista>
 {
-    private readonly ScreenSoundContext context;
+    // O costrutor receber o contexto da class DAL
+    public ArtistaDal(ScreenSoundContext context): base(context) { }
 
-    // Criando um construtor para o context
-    public ArtistaDal(ScreenSoundContext context)
-    {
-        this.context = context;
-    }
 
-    // Lista todos os artistas
-    public override IEnumerable<Artista> Listar()
-    { 
-        return context.Artistas.ToList();
-    }
-
-    // Adiciona novos artistas a tabela
-    public override void Adicionar(Artista artista)
-    { 
-        context.Artistas.Add(artista);
-        context.SaveChanges();
-    }
-
-    // Atualiza dados da tabela
-    public override void Atualizar(Artista artista)
-    {
-        context.Artistas.Update(artista);
-        context.SaveChanges();
-    }
-
-    // Deleta dados da tabela
-    public override void Deletar(Artista artista)
-    {
-        context.Artistas.Remove(artista);
-        context.SaveChanges();
-    }
-
+    // Metodo Recuperar pelo nome
     public  Artista? RecuparPeloNome(string valorBusca)
     {
 
