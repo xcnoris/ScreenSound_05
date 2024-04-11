@@ -41,8 +41,8 @@ using ScreenSound.Modelos;
 //return;
 #endregion
 
-var context = new ScreenSoundContext();
-var artistaDAL = new ArtistaDal(context);
+//var context = new ScreenSoundContext();
+//var artistaDAL = new DAL(new ScreenSoundContext());
 
 
 

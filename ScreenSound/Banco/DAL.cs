@@ -6,13 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ScreenSound.Banco;
+
 // Usamos o where para dizer que o T vai representar uma class
 internal class DAL<T> where T : class
 {
     protected readonly ScreenSoundContext context;
 
     // Contrutor solicitando context
-    protected DAL(ScreenSoundContext context)
+    public DAL(ScreenSoundContext context)
     {
         this.context = context;
     }
@@ -47,7 +48,10 @@ internal class DAL<T> where T : class
     }
 
     //Metodo RecuperarPor
-    public T? RecuparPeloNome(Func<T, bool> condicao)
+    // Usamos o Func quando precisamos representar um método sem ter que passar especificamente valores personalizados
+    // O metodo RecuperarPor pode filtrar por Nome, Id, etc...
+    
+    public T? RecuperarPor(Func<T, bool> condicao)
     {
         return context.Set<T>().FirstOrDefault(condicao);
     }
