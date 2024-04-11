@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ScreenSound.Banco;
 
-internal class ArtistaDal
+internal class ArtistaDal : DAL<Artista>
 {
     private readonly ScreenSoundContext context;
 
@@ -20,33 +20,33 @@ internal class ArtistaDal
     }
 
     // Lista todos os artistas
-    public IEnumerable<Artista> Listar()
+    public override IEnumerable<Artista> Listar()
     { 
         return context.Artistas.ToList();
     }
 
     // Adiciona novos artistas a tabela
-    public void Adcionar(Artista artista)
+    public override void Adicionar(Artista artista)
     { 
         context.Artistas.Add(artista);
         context.SaveChanges();
     }
 
     // Atualiza dados da tabela
-    public void Atualizar(Artista artista)
+    public override void Atualizar(Artista artista)
     {
         context.Artistas.Update(artista);
         context.SaveChanges();
     }
 
     // Deleta dados da tabela
-    public void Deletar(Artista artista)
+    public override void Deletar(Artista artista)
     {
         context.Artistas.Remove(artista);
         context.SaveChanges();
     }
 
-    public Artista? RecuparPeloNome(string valorBusca)
+    public  Artista? RecuparPeloNome(string valorBusca)
     {
 
         return context.Artistas.FirstOrDefault(a => a.Nome.Equals(valorBusca));

@@ -3,7 +3,7 @@ using ScreenSound.Menus;
 using ScreenSound.Modelos;
 
 
-
+#region Teste com metodos DAL
 //try
 //{
 //    var context = new ScreenSoundContext();
@@ -39,6 +39,8 @@ using ScreenSound.Modelos;
 //    Console.WriteLine($"Ocorreu um [ERRO]: {ex.Message}");
 //}
 //return;
+#endregion
+
 var context = new ScreenSoundContext();
 var artistaDAL = new ArtistaDal(context);
 
