@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ScreenSound.Banco;
 // Usamos o where para dizer que o T vai representar uma class
-internal abstract class DAL<T> where T : class
+internal class DAL<T> where T : class
 {
     protected readonly ScreenSoundContext context;
 
@@ -46,8 +46,11 @@ internal abstract class DAL<T> where T : class
         context.SaveChanges();
     }
 
-
-
+    //Metodo RecuperarPor
+    public T? RecuparPeloNome(Func<T, bool> condicao)
+    {
+        return context.Set<T>().FirstOrDefault(condicao);
+    }
 
 
 
