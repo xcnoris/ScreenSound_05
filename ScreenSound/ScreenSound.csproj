@@ -24,4 +24,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ScreenSound.Dados\ScreenSound.Dados.csproj" />
+    <ProjectReference Include="..\ScreenSound.Modelos\ScreenSound.Modelos.csproj" />
+  </ItemGroup>
+
 </Project>

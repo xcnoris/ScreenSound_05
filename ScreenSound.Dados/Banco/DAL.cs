@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace ScreenSound.Banco;
 
 // Usamos o where para dizer que o T vai representar uma class
-internal class DAL<T> where T : class
+public class DAL<T> where T : class
 {
-    protected readonly ScreenSoundContext context;
+    private readonly ScreenSoundContext context;
 
     // Contrutor solicitando context
     public DAL(ScreenSoundContext context)
@@ -55,11 +55,6 @@ internal class DAL<T> where T : class
     {
         return context.Set<T>().FirstOrDefault(condicao);
     }
-
-
-
-
-
 
 }
 

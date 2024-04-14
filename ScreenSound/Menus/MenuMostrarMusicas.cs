@@ -14,7 +14,7 @@ internal class MenuMostrarMusicas : Menu
         var artistaRecuperado = artistaDAL.RecuperarPor(a => a.Nome.Equals(nomeDoArtista));
         if (artistaRecuperado is not null)
         {
-            
+
             Console.WriteLine("\nDiscografia:");
             artistaRecuperado.ExibirDiscografia();
             Console.WriteLine("\nDigite uma tecla para voltar ao menu principal");
