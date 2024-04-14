@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using ScreenSound.Modelos;
+using ScreenSound.Modelos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,17 @@ public class ScreenSoundContext : DbContext
     // Metodo de conexao do Entity Framework com banco 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(stringDeConexao);
+        optionsBuilder
+            .UseSqlServer(stringDeConexao);
     }
 
+    // Explicitando o relacionamento de musicas e generos para o entity framework
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Musica>()
+            .HasMany(c => c.Generos)
+            .WithMany(c => c.Musicas);
+    }
 
     //Os objetos DbSet são usados para trabalhar com os conjuntos de entidades, nesse caso, entidades do tipo Receita.
 
@@ -28,6 +37,7 @@ public class ScreenSoundContext : DbContext
 
     // Referenciando a class Musica
     public DbSet<Musica> Musica { get; set; }
+    public DbSet<Genero> Generos { get; set; }   
 
 
 }

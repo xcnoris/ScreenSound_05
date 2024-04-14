@@ -1,4 +1,6 @@
-﻿namespace ScreenSound.Modelos;
+﻿using ScreenSound.Modelos.Modelos;
+
+namespace ScreenSound.Modelos;
 
 public class Musica
 {
@@ -11,6 +13,9 @@ public class Musica
     public int Id { get; set; }
     public int? AnoLancamento { get; set; }
     public Artista? Artista { get; set; }
+
+    // usamos o virtual para que o entity framework posso manipular nossa propriedade
+    public virtual ICollection<Genero> Generos { get; set; }
 
     public void ExibirFichaTecnica()
     {
