@@ -13,7 +13,7 @@ public class Genero
     public string? Descricao { get; set; } = string.Empty;
 
     // usamos o virtual para que o entity framework posso manipular nossa propriedade 
-    public virtual ICollection<Musica> Musicas { get; set; }
+    public virtual ICollection<Musica>? Musicas { get; set; }
 
     public override string ToString()
     {

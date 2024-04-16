@@ -1,4 +1,6 @@
-﻿namespace ScreenSound.Modelos; 
+﻿using ScreenSound.Modelos.Modelos;
+
+namespace ScreenSound.Modelos; 
 
 public class Artista 
 {
@@ -15,6 +17,7 @@ public class Artista
     public string FotoPerfil { get; set; }
     public string Bio { get; set; }
     public int Id { get; set; }
+    public ICollection<Genero> Generos { get; set; }
 
     public void AdicionarMusica(Musica musica)
     {
