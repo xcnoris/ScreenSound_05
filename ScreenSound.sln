@@ -5,13 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScreenSound", "ScreenSound\ScreenSound.csproj", "{A9CCE41C-6657-42BF-AED4-F3F578033037}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScreenSund.API", "..\CURSO - criando API Web com ASP.NET Core\ScreenSund.API\ScreenSund.API.csproj", "{0F84E83D-151B-4DDE-8B05-41A79D6F9C6E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScreenSound.Modelos", "ScreenSound.Modelos\ScreenSound.Modelos.csproj", "{2E23034F-EE9C-4C9E-A8C8-A337C5185D11}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScreenSound.Dados", "ScreenSound.Dados\ScreenSound.Dados.csproj", "{B95D1B5E-DBFD-4D55-ABE5-C0179D7DC74E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSound.API", "ScreenSound.API\ScreenSound.API.csproj", "{381295D7-AA60-4CDC-90CB-0519F231AA3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScreenSound.API", "ScreenSound.API\ScreenSound.API.csproj", "{381295D7-AA60-4CDC-90CB-0519F231AA3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{A9CCE41C-6657-42BF-AED4-F3F578033037}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9CCE41C-6657-42BF-AED4-F3F578033037}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9CCE41C-6657-42BF-AED4-F3F578033037}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F84E83D-151B-4DDE-8B05-41A79D6F9C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F84E83D-151B-4DDE-8B05-41A79D6F9C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F84E83D-151B-4DDE-8B05-41A79D6F9C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F84E83D-151B-4DDE-8B05-41A79D6F9C6E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2E23034F-EE9C-4C9E-A8C8-A337C5185D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E23034F-EE9C-4C9E-A8C8-A337C5185D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E23034F-EE9C-4C9E-A8C8-A337C5185D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
